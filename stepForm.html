@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        /* Make sure the navbar and footer are responsive */
+        .navbar {
+            background-color: #f8f9fa;
+        }
+
+        .footer {
+            background-color: #007bff;
+        }
+
+        .step-indicator {
+            display: flex;
+            /* flex-wrap: wrap; */
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        /* Step indicators */
+        .step-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+            /* Makes it clickable */
+        }
+
+        .step-item span {
+            margin-left: 15px;
+        }
+
+        .step-item .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ccc;
+            /* Disabled (light gray) color */
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .active .step-number {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .completed .step-number {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .text-update{
+            color: #28a745 !important;
+        }
+
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .step-indicator {
+                flex-direction: column;
+            }
+        }
+
+        .step-form-step {
+            display: none;
+        }
+
+        .step-form-step.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid d-flex justify-content-between">
+            <div>
+                <a class="navbar-brand" href="#">Step Form</a>
+            </div>
+            <div>
+                <h3 class="h4">Logout</h3>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+
+        <!-- Step indicators -->
+        <div class="step-indicator">
+            <div class="step-item active" id="step1Indicator" onclick="goToStep(1)">
+                <div class="step-number">1</div>
+                <span>Overview</span>
+            </div>
+            <div class="step-item" id="step2Indicator" onclick="goToStep(2)">
+                <div class="step-number">2</div>
+                <span>Pricing</span>
+            </div>
+            <div class="step-item" id="step3Indicator" onclick="goToStep(3)">
+                <div class="step-number">3</div>
+                <span>Description & FAQ</span>
+            </div>
+            <div class="step-item" id="step4Indicator" onclick="goToStep(4)">
+                <div class="step-number">4</div>
+                <span>Requirements</span>
+            </div>
+            <div class="step-item" id="step5Indicator" onclick="goToStep(5)">
+                <div class="step-number">5</div>
+                <span>Requirements</span>
+            </div>
+            <div class="step-item" id="step6Indicator" onclick="goToStep(6)">
+                <div class="step-number">6</div>
+                <span>Gallery</span>
+            </div>
+            <div class="step-item" id="step7Indicator" onclick="goToStep(7)">
+                <div class="step-number">7</div>
+                <span>Gallery</span>
+            </div>
+            <div class="step-item" id="step8Indicator" onclick="goToStep(8)">
+                <div class="step-number">8</div>
+                <span>Gallery</span>
+            </div>
+            <div class="step-item" id="step9Indicator" onclick="goToStep(9)">
+                <div class="step-number">9</div>
+                <span>Publish</span>
+            </div>
+        </div>
+
+        <!-- Step Form Content -->
+        <form id="stepForm">
+            <!-- Step 1 -->
+            <div class="step-form-step active" id="step1">
+                <h3>Step 1: Overview</h3>
+                <div class="mb-3">
+                    <label for="overview" class="form-label">Overview</label>
+                    <input required type="text" class="form-control" id="overview" placeholder="Enter overview">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="nextStep(1)">Next</button>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-form-step" id="step2">
+                <h3>Step 2: Pricing</h3>
+                <div class="mb-3">
+                    <label for="pricing" class="form-label">Pricing</label>
+                    <input required type="text" class="form-control" id="pricing" placeholder="Enter pricing">
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Previous</button>
+                <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next</button>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-form-step" id="step3">
+                <h3>Step 3: Description & FAQ</h3>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" placeholder="Enter description" required></textarea>
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Previous</button>
+                <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next</button>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-form-step" id="step4">
+                <h3>Step 4: Requirements</h3>
+                <div class="mb-3">
+                    <label for="requirements" class="form-label">Requirements</label>
+                    <input required type="text" class="form-control" id="requirements" placeholder="Enter requirements">
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="prevStep(4)">Previous</button>
+                <button type="button" class="btn btn-primary" onclick="nextStep(4)">Next</button>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-form-step" id="step5">
+                <h3>Step 5: Requirements</h3>
+                <div class="mb-3">
+                    <label for="requirements" class="form-label">Requirements</label>
+                    <input required type="text" class="form-control" id="requirements" placeholder="Enter requirements">
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="prevStep(5)">Previous</button>
+                <button type="button" class="btn btn-primary" onclick="nextStep(5)">Next</button>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step-form-step" id="step6">
+                <h3>Step 6: Gallery</h3>
+                <div class="mb-3">
+                    <label for="gallery" class="form-label">Gallery</label>
+                    <input required type="file" class="form-control" id="gallery" multiple>
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="prevStep(6)">Previous</button>
+                <button type="button" class="btn btn-primary" onclick="nextStep(6)">Next</button>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="step-form-step" id="step7">
+                <h3>Step 7: Gallery</h3>
+                <div class="mb-3">
+                    <label for="gallery" class="form-label">Gallery</label>
+                    <input required type="file" class="form-control" id="gallery" multiple>
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="prevStep(7)">Previous</button>
+                <button type="button" class="btn btn-primary" onclick="nextStep(7)">Next</button>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="step-form-step" id="step8">
+                <h3>Step 8: Gallery</h3>
+                <div class="mb-3">
+                    <label for="gallery" class="form-label">Gallery</label>
+                    <input required type="file" class="form-control" id="gallery" multiple>
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="prevStep(8)">Previous</button>
+                <button type="button" class="btn btn-primary" onclick="nextStep(8)">Next</button>
+            </div>
+
+            <!-- Step 9 -->
+            <div class="step-form-step" id="step9">
+                <h3>Step 9: Publish</h3>
+                <button type="submit" class="btn btn-success">Finish</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-center text-white footer fixed-bottom">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2025 Copyright:
+            <a class="text-white" href="#">abcd.com</a>
+        </div>
+    </footer>
+
+    <script>
+        // Disable all step indicators until the current step is completed
+        function updateStepIndicators(step) {
+            // Reset all indicators to default (disabled)
+            for (let i = 1; i <= 9; i++) {
+                const stepIndicator = document.getElementById('step' + i + 'Indicator');
+                stepIndicator.classList.remove('active', 'completed', 'text-update');
+                stepIndicator.classList.add('disabled'); // Add disabled class
+            }
+
+            // Mark the steps up to the current step as completed
+            for (let i = 1; i <= step; i++) {
+                var indicator = document.getElementById('step' + i + 'Indicator');
+
+                indicator.classList.add('completed' , 'text-update'); // Add completed class
+                indicator.classList.remove('disabled'); // Remove disabled class
+            }
+
+            // Mark the current step as active
+            var currentStepIndicator = document.getElementById('step' + step + 'Indicator');
+            currentStepIndicator.classList.add('active' , 'text-update'); // Add active class
+            currentStepIndicator.classList.remove('disabled'); // Remove disabled class
+        }
+
+        // The nextStep function with validation for required fields
+        function nextStep(step) {
+            // Check if the current step has all required fields filled
+            var currentStep = document.getElementById('step' + step);
+            var inputs = currentStep.querySelectorAll('input[required], textarea[required]'); // Get all required fields
+
+            // Loop through all required fields to check if they are filled
+            for (let input of inputs) {
+                if (!input.value) {
+                    alert('Please fill all required fields.');
+                    return; // Stop the function if a required field is not filled
+                }
+            }
+
+            // Hide the current step
+            currentStep.classList.remove('active');
+
+            // Mark the current step as completed and change indicator color
+            var currentStepIndicator = document.getElementById('step' + step + 'Indicator');
+            currentStepIndicator.classList.add('completed', 'text-update');
+
+            // Show the next step
+            var nextStep = document.getElementById('step' + (step + 1));
+            nextStep.classList.add('active');
+
+
+            // Highlight the next step indicator as active (dark gray)
+            var nextStepIndicator = document.getElementById('step' + (step + 1) + 'Indicator');
+            nextStepIndicator.classList.add('active');
+
+            // Update step indicators (to enable navigation for completed steps)
+            // updateStepIndicators(step + 1);
+        }
+
+        // The prevStep function to navigate to the previous step
+        function prevStep(step) {
+            // Hide the current step
+            var currentStep = document.getElementById('step' + step);
+            currentStep.classList.remove('active');
+
+            // Mark the current step as not completed and change indicator color
+            var currentStepIndicator = document.getElementById('step' + step + 'Indicator');
+            currentStepIndicator.classList.remove('completed', 'text-update');
+
+            // Show the previous step
+            var prevStep = document.getElementById('step' + (step - 1));
+            prevStep.classList.add('active');
+
+            // Highlight the previous step indicator as active (dark gray)
+            var prevStepIndicator = document.getElementById('step' + (step - 1) + 'Indicator');
+            prevStepIndicator.classList.add('active');
+
+            // Update step indicators (to disable navigation for incomplete steps)
+            updateStepIndicators(step - 1);
+        }
+
+        // Go to a specific step when clicking on an indicator (only if the step is completed)
+        function goToStep(step) {
+            // Check if the step is completed (i.e., has been filled and is not skipped)
+            if (!document.getElementById('step' + step + 'Indicator').classList.contains('completed' )) {
+                alert('Please complete the previous steps first.');
+                return;
+            }
+
+            // Hide the active step
+            document.querySelector('.step-form-step.active').classList.remove('active');
+
+            // Show the selected step
+            var targetStep = document.getElementById('step' + step);
+            targetStep.classList.add('active');
+
+            // Update the indicators
+            updateStepIndicators(step);
+        }
+
+
+    </script>
+
+</body>
+
+</html>
