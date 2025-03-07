@@ -155,100 +155,169 @@
         </div>
 
         <!-- Step Form Content -->
-        <form id="stepForm">
-            <!-- Step 1 -->
-            <div class="step-form-step active" id="step1">
-                <h3>Step 1: Overview</h3>
-                <div class="mb-3">
-                    <label for="overview" class="form-label">Overview</label>
-                    <input required type="text" class="form-control" id="overview" placeholder="Enter overview">
+         <div class="container">
+            <div class="row">
+                <div class="w-75 bg-danger my-4 mx-auto">
+                    <h1 class="text-center">hehhehhee</h1>
                 </div>
-                <button type="button" class="btn btn-primary" onclick="nextStep(1)">Next</button>
             </div>
+         </div>
 
-            <!-- Step 2 -->
-            <div class="step-form-step" id="step2">
-                <h3>Step 2: Pricing</h3>
-                <div class="mb-3">
-                    <label for="pricing" class="form-label">Pricing</label>
-                    <input required type="text" class="form-control" id="pricing" placeholder="Enter pricing">
+         <div class="container">
+            <div class="row">
+                <div class="w-75 bg-light mx-auto">
+                    <h1 class="text-capitalize py-2 fs-3">add new lead</h1>
                 </div>
-                <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Previous</button>
-                <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next</button>
             </div>
+         </div>
 
-            <!-- Step 3 -->
-            <div class="step-form-step" id="step3">
-                <h3>Step 3: Description & FAQ</h3>
-                <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" id="description" placeholder="Enter description" required></textarea>
+         <div class="container">
+            <div class="row">
+                <div class="w-75 bg-light mx-auto my-2">
+                    <form id="stepForm">
+                        <!-- Step 1 -->
+                        <div class="step-form-step active " id="step1">
+                            <div class="mb-3">
+                                <form class="row g-3 needs-validation" novalidate>
+                                    <div class="col-md-4">
+                                      <label for="validationCustom01" class="form-label text-capitalize">customer name</label>
+                                      <input type="text" class="form-control" id="validationCustom01" placeholder="Enter Your Name" required>
+                                      
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label for="validationCustom02" class="form-label text-capitalize">mobile</label>
+                                      <input type="text" class="form-control" id="validationCustom02" placeholder="Enter Mobile No." required max="10">
+                                    </div>
+                                    <div class="col-md-4">
+                                      <label for="validationCustomUsername" class="form-label text-capitalize">address</label>
+                                      <div class="input-group has-validation">
+                                        <!-- <span class="input-group-text" id="inputGroupPrepend">@</span> -->
+                                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                        <div class="invalid-feedback">
+                                          Please choose a username.
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <label for="validationCustom03" class="form-label text-capitalize">email</label>
+                                      <input type="text" class="form-control" id="validationCustom03" required>
+                                      <div class="invalid-feedback">
+                                        Please provide a valid city.
+                                      </div>
+                                    </div>
+                                  
+                                    
+                                    <!-- <div class="col-12">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                        <label class="form-check-label" for="invalidCheck">
+                                          Agree to terms and conditions
+                                        </label>
+                                        <div class="invalid-feedback">
+                                          You must agree before submitting.
+                                        </div>
+                                      </div>
+                                    </div> -->
+                                    <div class="col-12">
+                                      <button class="btn btn-primary" type="button" onclick="nextStep(1)" >Save & Next</button>
+                                    </div>
+                                  </form>
+            
+                                <!-- <label for="overview" class="form-label">Overview</label>
+                                <input required type="text" class="form-control" id="overview" placeholder="Enter overview"> -->
+                            </div>
+                            <!-- <button type="button" class="btn btn-primary" onclick="nextStep(1)">Next</button> -->
+                        </div>
+            
+                        <!-- Step 2 -->
+                        <div class="step-form-step" id="step2">
+                            <h3>Step 2: Pricing</h3>
+                            <div class="mb-3">
+                                <label for="pricing" class="form-label">Pricing</label>
+                                <input required type="text" class="form-control" id="pricing" placeholder="Enter pricing">
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Previous</button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next</button>
+                        </div>
+            
+                        <!-- Step 3 -->
+                        <div class="step-form-step" id="step3">
+                            <h3>Step 3: Description & FAQ</h3>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" placeholder="Enter description" required></textarea>
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Previous</button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next</button>
+                        </div>
+            
+                        <!-- Step 4 -->
+                        <div class="step-form-step" id="step4">
+                            <h3>Step 4: Requirements</h3>
+                            <div class="mb-3">
+                                <label for="requirements" class="form-label">Requirements</label>
+                                <input required type="text" class="form-control" id="requirements" placeholder="Enter requirements">
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(4)">Previous</button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(4)">Next</button>
+                        </div>
+            
+                        <!-- Step 5 -->
+                        <div class="step-form-step" id="step5">
+                            <h3>Step 5: Requirements</h3>
+                            <div class="mb-3">
+                                <label for="requirements" class="form-label">Requirements</label>
+                                <input required type="text" class="form-control" id="requirements" placeholder="Enter requirements">
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(5)">Previous</button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(5)">Next</button>
+                        </div>
+            
+                        <!-- Step 6 -->
+                        <div class="step-form-step" id="step6">
+                            <h3>Step 6: Gallery</h3>
+                            <div class="mb-3">
+                                <label for="gallery" class="form-label">Gallery</label>
+                                <input required type="file" class="form-control" id="gallery" multiple>
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(6)">Previous</button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(6)">Next</button>
+                        </div>
+            
+                        <!-- Step 7 -->
+                        <div class="step-form-step" id="step7">
+                            <h3>Step 7: Gallery</h3>
+                            <div class="mb-3">
+                                <label for="gallery" class="form-label">Gallery</label>
+                                <input required type="file" class="form-control" id="gallery" multiple>
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(7)">Previous</button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(7)">Next</button>
+                        </div>
+            
+                        <!-- Step 8 -->
+                        <div class="step-form-step" id="step8">
+                            <h3>Step 8: Gallery</h3>
+                            <div class="mb-3">
+                                <label for="gallery" class="form-label">Gallery</label>
+                                <input required type="file" class="form-control" id="gallery" multiple>
+                            </div>
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(8)">Previous</button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(8)">Next</button>
+                        </div>
+            
+                        <!-- Step 9 -->
+                        <div class="step-form-step" id="step9">
+                            <h3>Step 9: Publish</h3>
+                            <button type="submit" class="btn btn-success">Finish</button>
+                        </div>
+                    </form>
+                    
                 </div>
-                <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Previous</button>
-                <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next</button>
             </div>
+         </div>
 
-            <!-- Step 4 -->
-            <div class="step-form-step" id="step4">
-                <h3>Step 4: Requirements</h3>
-                <div class="mb-3">
-                    <label for="requirements" class="form-label">Requirements</label>
-                    <input required type="text" class="form-control" id="requirements" placeholder="Enter requirements">
-                </div>
-                <button type="button" class="btn btn-secondary" onclick="prevStep(4)">Previous</button>
-                <button type="button" class="btn btn-primary" onclick="nextStep(4)">Next</button>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="step-form-step" id="step5">
-                <h3>Step 5: Requirements</h3>
-                <div class="mb-3">
-                    <label for="requirements" class="form-label">Requirements</label>
-                    <input required type="text" class="form-control" id="requirements" placeholder="Enter requirements">
-                </div>
-                <button type="button" class="btn btn-secondary" onclick="prevStep(5)">Previous</button>
-                <button type="button" class="btn btn-primary" onclick="nextStep(5)">Next</button>
-            </div>
-
-            <!-- Step 6 -->
-            <div class="step-form-step" id="step6">
-                <h3>Step 6: Gallery</h3>
-                <div class="mb-3">
-                    <label for="gallery" class="form-label">Gallery</label>
-                    <input required type="file" class="form-control" id="gallery" multiple>
-                </div>
-                <button type="button" class="btn btn-secondary" onclick="prevStep(6)">Previous</button>
-                <button type="button" class="btn btn-primary" onclick="nextStep(6)">Next</button>
-            </div>
-
-            <!-- Step 7 -->
-            <div class="step-form-step" id="step7">
-                <h3>Step 7: Gallery</h3>
-                <div class="mb-3">
-                    <label for="gallery" class="form-label">Gallery</label>
-                    <input required type="file" class="form-control" id="gallery" multiple>
-                </div>
-                <button type="button" class="btn btn-secondary" onclick="prevStep(7)">Previous</button>
-                <button type="button" class="btn btn-primary" onclick="nextStep(7)">Next</button>
-            </div>
-
-            <!-- Step 8 -->
-            <div class="step-form-step" id="step8">
-                <h3>Step 8: Gallery</h3>
-                <div class="mb-3">
-                    <label for="gallery" class="form-label">Gallery</label>
-                    <input required type="file" class="form-control" id="gallery" multiple>
-                </div>
-                <button type="button" class="btn btn-secondary" onclick="prevStep(8)">Previous</button>
-                <button type="button" class="btn btn-primary" onclick="nextStep(8)">Next</button>
-            </div>
-
-            <!-- Step 9 -->
-            <div class="step-form-step" id="step9">
-                <h3>Step 9: Publish</h3>
-                <button type="submit" class="btn btn-success">Finish</button>
-            </div>
-        </form>
+        
     </div>
 
     <!-- Footer -->
@@ -263,6 +332,7 @@
         // Disable all step indicators until the current step is completed
         function updateStepIndicators(step) {
             // Reset all indicators to default (disabled)
+            
             for (let i = 1; i <= 9; i++) {
                 const stepIndicator = document.getElementById('step' + i + 'Indicator');
                 stepIndicator.classList.remove('active', 'completed', 'text-update');
@@ -292,6 +362,7 @@
             // Loop through all required fields to check if they are filled
             for (let input of inputs) {
                 if (!input.value) {
+                    // console.log(input.value)
                     alert('Please fill all required fields.');
                     return; // Stop the function if a required field is not filled
                 }
@@ -341,6 +412,7 @@
 
         // Go to a specific step when clicking on an indicator (only if the step is completed)
         function goToStep(step) {
+            
             // Check if the step is completed (i.e., has been filled and is not skipped)
             if (!document.getElementById('step' + step + 'Indicator').classList.contains('completed' )) {
                 alert('Please complete the previous steps first.');
