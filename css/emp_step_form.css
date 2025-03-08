@@ -1,0 +1,106 @@
+ /* Make sure the navbar and footer are responsive */
+ .navbar {
+    background-color: #f8f9fa;
+}
+
+.footer {
+    background-color: #007bff;
+}
+
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Step indicators */
+.step-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.step-item span {
+    margin-left: 15px;
+}
+
+.step-item .step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ccc;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.active .step-number {
+    background-color: #6c757d;
+    color: white;
+}
+
+.completed .step-number {
+    background-color: #28a745;
+    color: white;
+}
+
+.text-update {
+    color: #28a745 !important;
+}
+
+/* Add rounded border to the input elements */
+input,
+textarea {
+    border-radius: 0.5rem;
+}
+
+/* Shadow effect for form sections */
+.form-section {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.form-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2d3436;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.btn-custom {
+    background-color: #007bff;
+    color: white;
+    border-radius: 1.5rem;
+
+    transition: background-color 0.3s;
+}
+
+.btn-new {
+    padding: 10px 20px;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .step-indicator {
+        flex-direction: column;
+    }
+}
+
+.step-form-step {
+    display: none;
+}
+
+.step-form-step.active {
+    display: block;
+}

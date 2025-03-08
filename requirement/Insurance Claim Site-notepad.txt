@@ -1,0 +1,74 @@
+------------------- Insurance Claim Site ------------------- (Employee Lead and Partner Lead)
+
+Users type
+Admin, Employee, Partner(Agent)
+
+----------- Employee ------------------
+
+1. Employee Register
+->email id(domain mail id) and password (Register process)
+
+2. Lead Page
+Show all leads.
+
+-> On click Add Lead button
+
+* 1st Lead Type information
+Menu options LEAD( Add New Lead, Pending Lead, All Leads )
+
+( ************** Add New Lead ************)
+
+Customer Name, Mobile, address, mail id.
+
+* 2nd Registration Process
+
+Checque number OR UPI Transactio ID (Both )fields,
+
+* 3rd Aggreement
+- Agreement Copy(file type), Aadhar Card, Pan card.
+
+* 4th File Allowtment
+- File Number(System Generated code automatically assigned), Policy number, Policy Person Name, Policy Company name, Policy Agent Name(Optional), Policy Nominee, Nominee email id, Ploicy duration(clalendar from and to), type of policy(dropdown - medical claim, death claim, general insurance, motor insurance), Additional Information.
+
+* 5th Operation Stage
+- Client Mail formation(email input field), policy material(input field with multiple file selection), material issue(text), material solution(text).
+
+email send implementation to create a form with below information.
+Form
+to(email input),
+subject(text input),
+text(text input)
+
+* 6th Output
+Documents (file type), materials(file type).
+
+* 7th Claim Satllement
+- Claim Amount(input for amount input)
+
+* 8th Fees Satellemenet
+Description (input text)
+
+* 9th File CLosed (Employee can do)
+- File Closed( if file closed, then file will be open if admin provide to access to open that file )
+
+File Closed.(Employee and agent can't see file not be editable if file is closed)
+
+----------------- Partner --------------- (Admin will assign file to the Partners)
+1. Partner Register
+--> name, mail id, mobile number, aadhar card -> send id and password on mail.
+
+* 1st lead Registration (Partner Lead)
+- mobile, name, address, policy number
+
+* 2nd File Processing(Admin will update the status of registration process this partner can see only the status of partner lead)
+- Status, Accepted, rejected
+
+* 3rd Result
+- File is closed from Employee side then, here will show status of file like settled, or pending, or rejected
+
+
+----------------- Admin -----------------------
+
+- Admin can see the Employees & Partners.
+- Admin can see the employee files and edit the files information.
+- Admin can assign the file to a partner.

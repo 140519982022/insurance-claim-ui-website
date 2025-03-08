@@ -8,84 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-        /* Make sure the navbar and footer are responsive */
-        .navbar {
-            background-color: #f8f9fa;
-        }
-
-        .footer {
-            background-color: #007bff;
-        }
-
-        .step-indicator {
-            display: flex;
-            /* flex-wrap: wrap; */
-            justify-content: space-between;
-            cursor: pointer;
-        }
-
-        /* Step indicators */
-        .step-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            cursor: pointer;
-            /* Makes it clickable */
-        }
-
-        .step-item span {
-            margin-left: 15px;
-        }
-
-        .step-item .step-number {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #ccc;
-            /* Disabled (light gray) color */
-            color: white;
-            transition: background-color 0.3s;
-        }
-
-        .active .step-number {
-            background-color: #6c757d;
-            color: white;
-        }
-
-        .completed .step-number {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .text-update{
-            color: #28a745 !important;
-        }
-
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .step-indicator {
-                flex-direction: column;
-            }
-        }
-
-        .step-form-step {
-            display: none;
-        }
-
-        .step-form-step.active {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/emp_step_form.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-3 mb-2 bg-body-tertiary rounded">
         <div class="container-fluid d-flex justify-content-between">
             <div>
                 <a class="navbar-brand" href="#">Step Form</a>
@@ -103,7 +31,6 @@
             <div class="step-item active" id="step1Indicator" onclick="goToStep(1)">
                 <div class="step-number">1</div>
                 <span>Overview</span>
-                
             </div>
             <span>></span>
             <div class="step-item" id="step2Indicator" onclick="goToStep(2)">
@@ -111,43 +38,36 @@
                 <span>Pricing</span>
             </div>
             <span>></span>
-
             <div class="step-item" id="step3Indicator" onclick="goToStep(3)">
                 <div class="step-number">3</div>
                 <span>Description & FAQ</span>
             </div>
             <span>></span>
-
             <div class="step-item" id="step4Indicator" onclick="goToStep(4)">
                 <div class="step-number">4</div>
                 <span>Requirements</span>
             </div>
             <span>></span>
-
             <div class="step-item" id="step5Indicator" onclick="goToStep(5)">
                 <div class="step-number">5</div>
                 <span>Requirements</span>
             </div>
             <span>></span>
-
             <div class="step-item" id="step6Indicator" onclick="goToStep(6)">
                 <div class="step-number">6</div>
                 <span>Gallery</span>
             </div>
             <span>></span>
-
             <div class="step-item" id="step7Indicator" onclick="goToStep(7)">
                 <div class="step-number">7</div>
                 <span>Gallery</span>
             </div>
             <span>></span>
-
             <div class="step-item" id="step8Indicator" onclick="goToStep(8)">
                 <div class="step-number">8</div>
                 <span>Gallery</span>
             </div>
             <span>></span>
-
             <div class="step-item" id="step9Indicator" onclick="goToStep(9)">
                 <div class="step-number">9</div>
                 <span>Publish</span>
@@ -155,169 +75,414 @@
         </div>
 
         <!-- Step Form Content -->
-         <div class="container">
+        <div class="container">
             <div class="row">
-                <div class="w-75 bg-danger my-4 mx-auto">
-                    <h1 class="text-center">hehhehhee</h1>
-                </div>
-            </div>
-         </div>
-
-         <div class="container">
-            <div class="row">
-                <div class="w-75 bg-light mx-auto">
-                    <h1 class="text-capitalize py-2 fs-3">add new lead</h1>
-                </div>
-            </div>
-         </div>
-
-         <div class="container">
-            <div class="row">
-                <div class="w-75 bg-light mx-auto my-2">
+                <div class="w-75 bg-light mx-auto my-4 form-section">
                     <form id="stepForm">
                         <!-- Step 1 -->
-                        <div class="step-form-step active " id="step1">
+                        <div class="step-form-step active" id="step1">
+                            <h1 class="text-capitalize text-center form-header">Add New Lead</h1>
                             <div class="mb-3">
-                                <form class="row g-3 needs-validation" novalidate>
-                                    <div class="col-md-4">
-                                      <label for="validationCustom01" class="form-label text-capitalize">customer name</label>
-                                      <input type="text" class="form-control" id="validationCustom01" placeholder="Enter Your Name" required>
-                                      
-                                    </div>
-                                    <div class="col-md-4">
-                                      <label for="validationCustom02" class="form-label text-capitalize">mobile</label>
-                                      <input type="text" class="form-control" id="validationCustom02" placeholder="Enter Mobile No." required max="10">
-                                    </div>
-                                    <div class="col-md-4">
-                                      <label for="validationCustomUsername" class="form-label text-capitalize">address</label>
-                                      <div class="input-group has-validation">
-                                        <!-- <span class="input-group-text" id="inputGroupPrepend">@</span> -->
-                                        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                          Please choose a username.
-                                        </div>
-                                      </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="validationCustom01" class="form-label text-capitalize">Customer
+                                            Name</label>
+                                        <input type="text" class="form-control" id="validationCustom01"
+                                            placeholder="Enter Your Name" required>
                                     </div>
                                     <div class="col-md-6">
-                                      <label for="validationCustom03" class="form-label text-capitalize">email</label>
-                                      <input type="text" class="form-control" id="validationCustom03" required>
-                                      <div class="invalid-feedback">
-                                        Please provide a valid city.
-                                      </div>
+                                        <label for="validationCustom02"
+                                            class="form-label text-capitalize">Mobile</label>
+                                        <input type="text" class="form-control" id="validationCustom02"
+                                            placeholder="Enter Mobile No." required max="10">
                                     </div>
-                                  
-                                    
-                                    <!-- <div class="col-12">
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                        <label class="form-check-label" for="invalidCheck">
-                                          Agree to terms and conditions
-                                        </label>
-                                        <div class="invalid-feedback">
-                                          You must agree before submitting.
-                                        </div>
-                                      </div>
-                                    </div> -->
-                                    <div class="col-12">
-                                      <button class="btn btn-primary" type="button" onclick="nextStep(1)" >Save & Next</button>
+                                    <div class="col-md-12">
+                                        <label for="validationCustomUsername"
+                                            class="form-label text-capitalize">Address</label>
+                                        <input type="text" class="form-control" id="validationCustomUsername"
+                                            placeholder="Enter Address" required>
                                     </div>
-                                  </form>
-            
-                                <!-- <label for="overview" class="form-label">Overview</label>
-                                <input required type="text" class="form-control" id="overview" placeholder="Enter overview"> -->
+                                    <div class="col-md-12">
+                                        <label for="validationCustom03" class="form-label text-capitalize">Email</label>
+                                        <input type="email" class="form-control" id="validationCustom03"
+                                            placeholder="Enter Email" required>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn btn-custom btn-new" onclick="nextStep(1)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- <button type="button" class="btn btn-primary" onclick="nextStep(1)">Next</button> -->
                         </div>
-            
-                        <!-- Step 2 -->
+
+                        <!-- Step 2: Register Process -->
                         <div class="step-form-step" id="step2">
-                            <h3>Step 2: Pricing</h3>
+                            <h1 class="text-capitalize text-center form-header">Register Process</h1>
                             <div class="mb-3">
-                                <label for="pricing" class="form-label">Pricing</label>
-                                <input required type="text" class="form-control" id="pricing" placeholder="Enter pricing">
+                                <div class="row g-3">
+                                    <!-- Cheque No. Field -->
+                                    <div class="col-md-6">
+                                        <label for="chequeNo" class="form-label text-capitalize">Cheque No.</label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Cheque No." required>
+                                    </div>
+
+                                    <!-- UPI Transaction ID Field -->
+                                    <div class="col-md-6">
+                                        <label for="upiTransactionId" class="form-label text-capitalize">UPI Transaction
+                                            ID</label>
+                                        <input type="text" class="form-control" id="upiTransactionId"
+                                            placeholder="Enter UPI Transaction ID" required>
+                                    </div>
+
+                                    <!-- Custom Validation Message -->
+                                    <div id="error-message" class="col-12 text-danger" style="display:none;">
+                                        <small>Please fill out either the Cheque No. or the UPI Transaction ID.</small>
+                                    </div>
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn btn-secondary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(2)">Previous</button>
+                                        <button type="button" class="btn btn-custom btn-new" onclick="nextStep(2)">Save
+                                            & Next</button>
+                                        <!-- <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next</button> -->
+                                    </div>
+                                </div>
                             </div>
-                            <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Previous</button>
-                            <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next</button>
                         </div>
-            
-                        <!-- Step 3 -->
+
+                        <!-- Step 3: agreement -->
                         <div class="step-form-step" id="step3">
-                            <h3>Step 3: Description & FAQ</h3>
+                            <h1 class="text-capitalize text-center form-header">agreement</h1>
                             <div class="mb-3">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" id="description" placeholder="Enter description" required></textarea>
+                                <div class="row g-3">
+                                    <!-- Cheque No. Field -->
+                                    <div class="col-md-12">
+                                        <label for="chequeNo" class="form-label text-capitalize">agreement copy
+                                            No.</label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Cheque No." required>
+                                    </div>
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn btn-secondary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(3)">Previous</button>
+                                        <button type="button" class="btn btn-custom btn-new" onclick="nextStep(3)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
                             </div>
-                            <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Previous</button>
-                            <button type="button" class="btn btn-primary" onclick="nextStep(3)">Next</button>
                         </div>
-            
+
                         <!-- Step 4 -->
                         <div class="step-form-step" id="step4">
-                            <h3>Step 4: Requirements</h3>
+                            <h1 class="text-capitalize text-center form-header">File Allowtment</h1>
                             <div class="mb-3">
-                                <label for="requirements" class="form-label">Requirements</label>
-                                <input required type="text" class="form-control" id="requirements" placeholder="Enter requirements">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="validationCustom01" class="form-label text-capitalize">File
+                                            Number</label>
+                                        <input type="text" class="form-control" id="validationCustom01"
+                                            placeholder="Enter Your Name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="validationCustom02" class="form-label text-capitalize">Policy
+                                            number</label>
+                                        <input type="text" class="form-control" id="validationCustom02"
+                                            placeholder="Enter Mobile No." required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="validationCustomUsername" class="form-label text-capitalize"> Policy
+                                            Person Name</label>
+                                        <input type="text" class="form-control" id="validationCustomUsername"
+                                            placeholder="Enter Address" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="validationCustom03" class="form-label text-capitalize">Policy
+                                            Company name</label>
+                                        <input type="text" class="form-control" id="validationCustom03"
+                                            placeholder="Enter Policy Company name" required>
+                                    </div>
+
+                                    <!-- not required -->
+                                    <div class="col-md-6">
+                                        <label for="validationCustom03" class="form-label text-capitalize">Policy Agent
+                                            Name</label>
+                                        <input type="text" class="form-control" id="validationCustom03"
+                                            placeholder="Enter Email">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="validationCustom01" class="form-label text-capitalize">Policy
+                                            Nominee</label>
+                                        <input type="text" class="form-control" id="validationCustom01"
+                                            placeholder="Enter Your Name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="validationCustom02" class="form-label text-capitalize">Nominee email
+                                            id</label>
+                                        <input type="text" class="form-control" id="validationCustom02"
+                                            placeholder="Enter Nominee Email ID" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="validationCustom03" class="form-label text-capitalize">type of
+                                            policy</label>
+                                        <div class="mb-3">
+                                            <select class="form-select" required aria-label="select example">
+                                                <option value="" disabled selected>~~ select option ~~</option>
+                                                <option value="1" class="text-capitalize">option One</option>
+                                                <option value="2" class="text-capitalize">option Two</option>
+                                                <option value="3" class="text-capitalize">option Three</option>
+                                                <option value="4" class="text-capitalize">option four</option>
+                                                <option value="5" class="text-capitalize">option five</option>
+
+                                            </select>
+                                            <div class="invalid-feedback">Example invalid select feedback</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="validationCustom03" class="form-label text-capitalize">Additional
+                                            Information</label>
+                                        <!-- <input type="text" class="form-control" id="validationCustom03"
+                                            placeholder="Enter Email" required> -->
+                                        <textarea name="" id="" class="form-control" required></textarea>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="validationCustomUsername" class="form-label text-capitalize">Ploicy
+                                            duration</label>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <span>From : &nbsp; <input type="date" class="form-control"
+                                                            id="validationCustomUsername" required></span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span>To : &nbsp; <input type="date" class="form-control"
+                                                            id="validationCustomUsername" required></span>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn btn-secondary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(4)">Previous</button>
+                                        <button type="button" class="btn btn-custom btn-new" onclick="nextStep(4)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
                             </div>
-                            <button type="button" class="btn btn-secondary" onclick="prevStep(4)">Previous</button>
-                            <button type="button" class="btn btn-primary" onclick="nextStep(4)">Next</button>
                         </div>
-            
-                        <!-- Step 5 -->
+
+                        <!-- Step 5: Operation Stage -->
                         <div class="step-form-step" id="step5">
-                            <h3>Step 5: Requirements</h3>
+                            <h1 class="text-capitalize text-center form-header">Operation Stage</h1>
                             <div class="mb-3">
-                                <label for="requirements" class="form-label">Requirements</label>
-                                <input required type="text" class="form-control" id="requirements" placeholder="Enter requirements">
+                                <div class="row g-3">
+                                    <!-- Cheque No. Field -->
+                                    <div class="col-md-6">
+                                        <label for="chequeNo" class="form-label text-capitalize">Client Mail
+                                            formation</label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Cheque No." required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="chequeNo" class="form-label text-capitalize">material issue</label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Cheque No." required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="chequeNo" class="form-label text-capitalize">material
+                                            solution</label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Cheque No." required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="chequeNo" class="form-label text-capitalize">policy material</label>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="validationFormCheck1"
+                                                required>
+                                            <label class="form-check-label" for="validationFormCheck1">Privacy
+                                                Policy</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="validationFormCheck1"
+                                                required>
+                                            <label class="form-check-label" for="validationFormCheck1"> Terms of
+                                                Service</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="validationFormCheck1"
+                                                required>
+                                            <label class="form-check-label" for="validationFormCheck1">Cookie
+                                                Policy</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="validationFormCheck1"
+                                                required>
+                                            <label class="form-check-label" for="validationFormCheck1">Refund & Return
+                                                Policy</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="validationFormCheck1"
+                                                required>
+                                            <label class="form-check-label" for="validationFormCheck1">Security
+                                                Policy</label>
+                                        </div>
+
+
+                                    </div>
+
+                                    <p class="text-danger py-3">email send implementation to create a form with below
+                                        information.</p>
+
+                                    <div class="col-md-6">
+                                        <label for="chequeNo" class="form-label text-capitalize">from</label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Email From" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="chequeNo" class="form-label text-capitalize">to</label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Email To" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="chequeNo" class="form-label text-capitalize">subject</label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Subject" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="chequeNo" class="form-label text-capitalize">Message</label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Email Message" required>
+                                    </div>
+
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn btn-secondary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(5)">Previous</button>
+                                        <button type="button" class="btn btn-custom btn-new" onclick="nextStep(5)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
                             </div>
-                            <button type="button" class="btn btn-secondary" onclick="prevStep(5)">Previous</button>
-                            <button type="button" class="btn btn-primary" onclick="nextStep(5)">Next</button>
                         </div>
-            
-                        <!-- Step 6 -->
+
+                        <!-- Step 6: Output -->
                         <div class="step-form-step" id="step6">
-                            <h3>Step 6: Gallery</h3>
+                            <h1 class="text-capitalize text-center form-header">Output</h1>
                             <div class="mb-3">
-                                <label for="gallery" class="form-label">Gallery</label>
-                                <input required type="file" class="form-control" id="gallery" multiple>
+                                <div class="row g-3">
+                                    <!-- Cheque No. Field -->
+                                    <div class="col-md-6">
+                                        <label for="chequeNo" class="form-label text-capitalize">Documents
+                                            formation</label>
+                                        <input type="file" class="form-control" id="chequeNo" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="chequeNo" class="form-label text-capitalize">materials</label>
+                                        <input type="file" class="form-control" id="chequeNo" required>
+                                    </div>
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn btn-secondary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(6)">Previous</button>
+                                        <button type="button" class="btn btn-custom btn-new" onclick="nextStep(6)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
                             </div>
-                            <button type="button" class="btn btn-secondary" onclick="prevStep(6)">Previous</button>
-                            <button type="button" class="btn btn-primary" onclick="nextStep(6)">Next</button>
                         </div>
-            
-                        <!-- Step 7 -->
+
+                        <!-- Step 7: Claim Satllement -->
                         <div class="step-form-step" id="step7">
-                            <h3>Step 7: Gallery</h3>
+                            <h1 class="text-capitalize text-center form-header">Claim Satllement</h1>
                             <div class="mb-3">
-                                <label for="gallery" class="form-label">Gallery</label>
-                                <input required type="file" class="form-control" id="gallery" multiple>
+                                <div class="row g-3">
+                                    <!-- Cheque No. Field -->
+                                    <div class="col-md-12">
+                                        <label for="chequeNo" class="form-label text-capitalize"> Claim Amount</label>
+                                        <input type="text" class="form-control" id="chequeNo" placeholder="3000"
+                                            required>
+                                    </div>
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn btn-secondary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(7)">Previous</button>
+                                        <button type="button" class="btn btn-custom btn-new" onclick="nextStep(7)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
                             </div>
-                            <button type="button" class="btn btn-secondary" onclick="prevStep(7)">Previous</button>
-                            <button type="button" class="btn btn-primary" onclick="nextStep(7)">Next</button>
                         </div>
-            
-                        <!-- Step 8 -->
-                        <div class="step-form-step" id="step8">
-                            <h3>Step 8: Gallery</h3>
+
+                        <!-- Step 8: Fees Satellemenet -->
+                        <div class="step-form-step " id="step8">
+                            <h1 class="text-capitalize text-center form-header">Fees Satellemenet</h1>
                             <div class="mb-3">
-                                <label for="gallery" class="form-label">Gallery</label>
-                                <input required type="file" class="form-control" id="gallery" multiple>
+                                <div class="row g-3">
+                                    <!-- Cheque No. Field -->
+                                    <div class="col-md-12">
+                                        <label for="chequeNo" class="form-label text-capitalize"> Description </label>
+                                       
+                                        <textarea name="" id="" class="form-control" placeholder="Enter Message" required></textarea>
+                                    </div>
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn btn-secondary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(8)">Previous</button>
+                                        <button type="button" class="btn btn-custom btn-new" onclick="nextStep(8)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
                             </div>
-                            <button type="button" class="btn btn-secondary" onclick="prevStep(8)">Previous</button>
-                            <button type="button" class="btn btn-primary" onclick="nextStep(8)">Next</button>
                         </div>
-            
-                        <!-- Step 9 -->
+
+                        <!-- Step 9: File CLosed  -->
                         <div class="step-form-step" id="step9">
-                            <h3>Step 9: Publish</h3>
-                            <button type="submit" class="btn btn-success">Finish</button>
+                            <h1 class="text-capitalize text-center form-header">File CLosed </h1>
+                            <div class="mb-3">
+                                <div class="row g-3">
+                                    <!-- Cheque No. Field -->
+                                    <div class="col-md-12">
+                                        <label for="chequeNo" class="form-label text-capitalize"> File Closed : <span class="text-success fw-bold">Active</span> <span class="text-danger fw-bold" hidden >Deactive</span> </label>
+                                       
+                            
+                                    </div>
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4">
+                                        <button type="button" class="btn btn-secondary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(9)">Previous</button>
+                                        <button type="button" class="btn btn-custom btn-new">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+
+                        <!-- Other steps... (Steps 2-9 remain unchanged) -->
+
                     </form>
-                    
                 </div>
             </div>
-         </div>
+        </div>
 
-        
     </div>
 
     <!-- Footer -->
@@ -332,7 +497,7 @@
         // Disable all step indicators until the current step is completed
         function updateStepIndicators(step) {
             // Reset all indicators to default (disabled)
-            
+
             for (let i = 1; i <= 9; i++) {
                 const stepIndicator = document.getElementById('step' + i + 'Indicator');
                 stepIndicator.classList.remove('active', 'completed', 'text-update');
@@ -343,13 +508,13 @@
             for (let i = 1; i <= step; i++) {
                 var indicator = document.getElementById('step' + i + 'Indicator');
 
-                indicator.classList.add('completed' , 'text-update'); // Add completed class
+                indicator.classList.add('completed', 'text-update'); // Add completed class
                 indicator.classList.remove('disabled'); // Remove disabled class
             }
 
             // Mark the current step as active
             var currentStepIndicator = document.getElementById('step' + step + 'Indicator');
-            currentStepIndicator.classList.add('active' , 'text-update'); // Add active class
+            currentStepIndicator.classList.add('active', 'text-update'); // Add active class
             currentStepIndicator.classList.remove('disabled'); // Remove disabled class
         }
 
@@ -412,9 +577,9 @@
 
         // Go to a specific step when clicking on an indicator (only if the step is completed)
         function goToStep(step) {
-            
+
             // Check if the step is completed (i.e., has been filled and is not skipped)
-            if (!document.getElementById('step' + step + 'Indicator').classList.contains('completed' )) {
+            if (!document.getElementById('step' + step + 'Indicator').classList.contains('completed')) {
                 alert('Please complete the previous steps first.');
                 return;
             }
