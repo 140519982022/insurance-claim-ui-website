@@ -1,6 +1,10 @@
+ body{
+    background-color: #e90c0c;
+ }
+ 
  /* Make sure the navbar and footer are responsive */
  .navbar {
-    background-color: #f8f9fa;
+    background-color: #007bff;
 }
 
 .footer {
@@ -74,17 +78,15 @@ textarea {
 }
 
 /* Button styles */
-.btn-custom {
+/* .btn-custom {
     background-color: #007bff;
     color: white;
     border-radius: 1.5rem;
 
     transition: background-color 0.3s;
-}
+} */
 
-.btn-new {
-    padding: 10px 20px;
-}
+
 
 .btn-custom:hover {
     background-color: #0056b3;
@@ -104,3 +106,11 @@ textarea {
 .step-form-step.active {
     display: block;
 }
+
+.input-group-text {
+    width: 100px; /* Set width for the country code dropdown */
+  }
+
+  .mobile-input {
+    max-width: 100%; /* Ensure mobile number input field takes full width */
+  }

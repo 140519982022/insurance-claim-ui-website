@@ -1,0 +1,30 @@
+label {
+    text-transform: capitalize;
+}
+
+body{
+    /* background: #84c1fa;
+
+
+    background: -webkit-linear-gradient(to right, rgba(55, 163, 240, 0.94), rgba(2, 71, 105, 0.5));
+
+   
+    background: linear-gradient(to right, rgba(149, 201, 246, 0.5), rgba(161, 215, 242, 0.5)) */
+    /* background: linear-gradient(135deg, #a2dbf3, #84c1fa, #00b4d8); */
+}
+
+.form-bg{
+    background-color: #84c1fa70 !important;
+
+}
+
+/* input[type=text], input[type=password], input[type=checkbox], input[type=tel],textarea, input[type=date], select {
+   
+    background-color: white !important;
+   
+} */
+
+/* .btn-new {
+    padding: 15px 25px;
+    
+} */
