@@ -1,7 +1,3 @@
- body{
-    background-color: #e90c0c;
- }
- 
  /* Make sure the navbar and footer are responsive */
  .navbar {
     background-color: #007bff;
@@ -113,4 +109,8 @@ textarea {
 
   .mobile-input {
     max-width: 100%; /* Ensure mobile number input field takes full width */
+  }
+
+  .bg-main{
+    background-color: pink;
   }
