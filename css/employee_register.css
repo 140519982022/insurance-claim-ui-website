@@ -23,3 +23,7 @@ a {
 .form-right i {
     font-size: 100px;
 }
+
+.row{
+    --bs-gutter-x: 0 !important;
+}

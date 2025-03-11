@@ -89,14 +89,9 @@ textarea {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 320px) {
     .step-indicator {
-        flex-wrap: wrap;
-    }
-
-    .step-item {
-     
-        margin-bottom: 15px;
+        flex-direction: row;
         
     }
 }
@@ -120,5 +115,3 @@ textarea {
   .bg-main{
     background-color: pink;
   }
-
-  
