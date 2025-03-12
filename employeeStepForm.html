@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lead regi</title>
-    <link rel="stylesheet" href="../css/partner/leadRegistration.css">
-    <!-- <link rel="stylesheet" href="../css/common.css"> -->
+    <title>emp Step Form</title>
+    <!-- css style links -->
+    <link rel="stylesheet" href="./css/emp_step_form.css">
+    <link rel="stylesheet" href="./css/common.css">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -21,6 +22,7 @@
             </div>
             <div>
                 <a href="#" class="text-decoration-none"><div class="h6 text-white">Logout</div></a>
+
             </div>
         </div>
     </nav>
@@ -28,54 +30,100 @@
     <div class="container py-4">
 
         <!-- Step indicators -->
-        <div class="step-indicator align-items-center col-md-5 mx-auto col-lg-4">
-            <div class="step-item active" id="step1Indicator" onclick="goToStep(1)">
-                <div class="step-number">1</div>
-                <span>Overview</span>
-            </div>
-            <span>  ></span>
-            <div class="step-item" id="step2Indicator" onclick="goToStep(2)">
-                <div class="step-number">2</div>
-                <span>Pricing</span>
-            </div>
-            <span> ></span>
-            <div class="step-item" id="step3Indicator" onclick="goToStep(3)">
-                <div class="step-number">3</div>
-                <span>Description & FAQ</span>
-            </div>
+   <div class="row">
+    <div class="step-indicator align-items-center">
+        <div class="step-item active" id="step1Indicator" onclick="goToStep(1)">
+            <div class="step-number">1</div>
+            <span>add Lead</span>
+            <span>></span>
         </div>
+        <div class="step-item" id="step2Indicator" onclick="goToStep(2)">
+            <div class="step-number">2</div>
+            <span>cheque No.</span>
+            <span>></span>
+        </div>
+        <div class="step-item" id="step3Indicator" onclick="goToStep(3)">
+            <div class="step-number">3</div>
+            <span>agreement</span>
+            <span>></span>
+        </div>
+        <div class="step-item" id="step4Indicator" onclick="goToStep(4)">
+            <div class="step-number">4</div>
+            <span>file allotment</span>
+            <span>></span>
+        </div>
+        <div class="step-item" id="step5Indicator" onclick="goToStep(5)">
+            <div class="step-number">5</div>
+            <span>Operation Stage </span>
+            <span>></span>
+        </div>
+        <div class="step-item" id="step6Indicator" onclick="goToStep(6)">
+            <div class="step-number">6</div>
+            <span>output</span>
+            <span>></span>
+        </div>
+        <div class="step-item" id="step7Indicator" onclick="goToStep(7)">
+            <div class="step-number">7</div>
+            <span>Claim Amount</span>
+            <span>></span>
+        </div>
+        <div class="step-item" id="step8Indicator" onclick="goToStep(8)">
+            <div class="step-number">8</div>
+            <span>Satellemenet</span>
+            <span>></span>
+        </div>
+        <div class="step-item" id="step9Indicator" onclick="goToStep(9)">
+            <div class="step-number">9</div>
+            <span>file Status</span>
+        </div>
+    </div>
+   </div>
+   <div class="container">
+    <div class="row mt-5">
+        <div class="col-md-8 mx-auto bg-main py-2 mb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h5>Ready to secure your future today?</h5>
+                        <p>register now and let us help you take the first step toward a secure tomorrow! Visit <span class="fw-bold"> your service website </span> and get started today.</p>
 
-        <!-- Step Form Content -->
+                    </div>
+                    <div class="col-md-3 overflow-hidden img-position">
+                        <img src="./images/secure.jpg" alt="" srcset="" width="100" height="100">
+                     </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+        <!-- employee Step Form starts from here -->
         <div class="container">
             <div class="row">
                 <div class="w-75 mx-auto my-4 form-section  form-bg p-4">
                     <form id="stepForm" >
-                        <!-- Step 1 -->
+                        <!-- Step 1 Add New Lead -->
                         <div class="step-form-step active" id="step1">
-                            <h1 class="text-capitalize text-center form-header">lead Registration </h1>
+                            <h1 class="text-capitalize text-start form-header">Add New Lead</h1>
                             <div class="mb-3">
                                 <div class="row g-3">
                                     <div class="col-md-12">
-                                        <label for="validationCustom01" class="form-label text-capitalize">
-                                            Name</label>
-                                        <input type="text" class="form-control" id="validationCustom01"
+                                        <label for="customer_name" class="form-label text-capitalize">Customer
+                                            Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="customer_name"
                                             placeholder="Enter Your Name" required>
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="validationCustom03" class="form-label text-capitalize">policy no.
-                                        </label>
-                                        <input type="text" class="form-control" id="validationCustom03"
-                                            placeholder="Enter Policy Number
-                                            " required>
+                                        <label for="customer_email" class="form-label text-capitalize">Email <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="customer_email"
+                                            placeholder="Enter Email" required>
                                     </div>
                                     <div class="container">
                                         <div class="row">
-                                            
-                                            <div class="col-12 col-md-2">
-                                              <label for="cod" class="form-label text-capitalize">Country code</label>
+                                            <div class="col-12 col-md-3">
+                                              <label for="customer_country_code" class="form-label text-capitalize">Country code <span class="text-danger">*</span></label>
                                             <div class="input-group">
-
-                                                <select class="form-select form-control browser-default custom-select input-group-text">
+                                                <select class="form-select form-control browser-default custom-select input-group-text text-start">
                                                     <option data-countryCode="IN" value="91" selected>India (+91)</option>
                                                     <option data-countryCode="GB" value="44">UK (+44)</option>
                                           
@@ -292,27 +340,23 @@
                                                     <option data-countryCode="YE" value="967">Yemen (South)(+967)</option>
                                                     <option data-countryCode="ZM" value="260">Zambia (+260)</option>
                                                     <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
-                                                </select>
+                                                  </select>
                                             </div>
                                           </div>
-                                          <div class="col-12 col-md-10">
-                                            <label for="cod" class="form-label text-capitalize">mobile</label>
-                                              
+                                          <div class="col-12 col-md-9">
+                                            <label for="customer_mobileNo" class="form-label text-capitalize">mobile <span class="text-danger">*</span></label>
                                               <div class="input-group">
-                                              <input type="tel" class="form-control mobile-input" id="mobile" placeholder="Enter mobile number" aria-label="Mobile number">
+                                              <input type="tel" class="form-control mobile-input" id="customer_mobileNo" placeholder="Enter mobile number" aria-label="Mobile number">
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     <div class="col-md-12">
-                                        <label for="validationCustomUsername"
-                                            class="form-label text-capitalize">Address</label>
-                                        <!-- <input type="text" class="" id="validationCustomUsername"
-                                            placeholder="Enter Address" required> -->
-                                            <textarea name="" class="form-control" id="" placeholder="Enter Address" required></textarea>
+                                        <label for="customer_address"
+                                            class="form-label text-capitalize">Address <span class="text-danger">*</span></label>
+                                            <textarea name="" class="form-control" id="customer_address" placeholder="Enter Address" required></textarea>
                                     </div>
-                                    
-                                    <div class="col-12 mt-4 text-end ">
+                                    <div class="col-12 mt-4 text-end">
                                         <button type="button" class="btn btn-primary rounded-pill me-3" onclick="nextStep(1)">Save
                                             & Next</button>
                                     </div>
@@ -320,46 +364,349 @@
                             </div>
                         </div>
 
-                        <!-- Step 2: Register Process -->
+                        <!-- Step 2: Registration Process -->
                         <div class="step-form-step" id="step2">
-                            <h1 class="text-capitalize text-center form-header">File Processing</h1>
+                            <h1 class="text-capitalize text-start form-header">Registration Process</h1>
                             <div class="mb-3">
                                 <div class="row g-3">
-                                    <!-- Cheque No. Field -->
                                     <div class="col-md-12">
-                                        <label for="chequeNo" class="form-label text-capitalize"> File Processing : <span class="badge rounded-pill bg-success">Accepted</span> <span class="badge rounded-pill bg-danger" hidden >rejected</span> </label>
-                                       
-                            
+                                        <label for="chequeNoOrupiTransactionId" class="form-label text-capitalize">Cheque No. / UPI Transaction
+                                            ID <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="chequeNoOrupiTransactionId"
+                                            placeholder="Enter Cheque No. / UPI Transaction ID" required>
                                     </div>
-
+                                    <!-- Custom Validation Message -->
+                                    <div id="error-message" class="col-12 text-danger" style="display:none;">
+                                        <small>Please fill out either the Cheque No. or the UPI Transaction ID.</small>
+                                    </div>
                                     <!-- Button to Save & Next -->
                                     <div class="col-12 mt-4 text-end">
-                                        <button type="button" class="btn btn-primary btn-new mr-3 rounded-pill"
+                                        <button type="button" class="btn btn-primary  rounded-pill"
                                             onclick="prevStep(2)">Previous</button>
-                                        <button type="button" class="btn btn-primary rounded-pill ms-4 me-3" onclick="nextStep(2)">Save & Next</button>
+                                        <button type="button" class="btn btn-primary rounded-pill ms-4 me-3" onclick="nextStep(2)">Save
+                                            & Next</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        
-
-                        <!-- Step 9: Result  -->
-                        <div class="step-form-step " id="step3">
-                            <h1 class="text-capitalize text-center form-header">Result </h1>
+                        <!-- Step 3: agreement -->
+                        <div class="step-form-step" id="step3">
+                            <h1 class="text-capitalize text-start form-header">agreement</h1>
                             <div class="mb-3">
                                 <div class="row g-3">
                                     <!-- Cheque No. Field -->
                                     <div class="col-md-12">
-                                        <label for="chequeNo" class="form-label text-capitalize"> File Closed : <span class="badge rounded-pill bg-success" hidden>settled</span> <span class="badge rounded-pill bg-warning text-dark"  >pending</span> <span class="badge rounded-pill bg-danger"  hidden>rejected</span></label>
-                                       
-                            
+                                        <label for="chequeNo" class="form-label text-capitalize">agreement copy
+                                            No. <span class="text-danger">*</span></label>
+                                        <input type="file" class="form-control" id="chequeNo"
+                                            placeholder="Enter Agreement No." required>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label for="chequeNo" class="form-label text-capitalize">Aadhar Card No. <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Aadhar Card No." required>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label for="chequeNo" class="form-label text-capitalize">Pan card No. <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Pan card No." required>
                                     </div>
 
                                     <!-- Button to Save & Next -->
                                     <div class="col-12 mt-4 text-end">
                                         <button type="button" class="btn btn-primary btn-new mr-3 rounded-pill"
                                             onclick="prevStep(3)">Previous</button>
+                                        <button type="button" class="btn btn-primary rounded-pill ms-4 me-3" onclick="nextStep(3)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 file allotment-->
+                        <div class="step-form-step" id="step4">
+                            <h1 class="text-capitalize text-start form-header">file allotment</h1>
+                            <div class="mb-3">
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="validationCustom01" class="form-label text-capitalize">File
+                                            Number <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="validationCustom01"
+                                            value="n54654654D46584D" disabled required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="allotment_policy_no" class="form-label text-capitalize">Policy
+                                            number <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="allotment_policy_no"
+                                            placeholder="Enter Policy No." required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="allotment_person_name" class="form-label text-capitalize"> Policy
+                                            Person Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="allotment_person_name"
+                                            placeholder="Enter Policy Person Name" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="allotment_company_name" class="form-label text-capitalize">Policy
+                                            Company name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="allotment_company_name"
+                                            placeholder="Enter Policy Company name" required>
+                                    </div>
+
+                                    <!-- not required -->
+                                    <div class="col-md-12">
+                                        <label for="allotment_agent_name" class="form-label text-capitalize">Policy Agent
+                                            Name </label>
+                                        <input type="text" class="form-control" id="allotment_agent_name"
+                                            placeholder="Enter Policy Agent Name">
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label for="allotment_policy_nominee" class="form-label text-capitalize">Policy
+                                            Nominee <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="allotment_policy_nominee"
+                                            placeholder="Enter Policy Nominee Name" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="allotment_nominee_email" class="form-label text-capitalize">Nominee email
+                                            id <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="allotment_nominee_email"
+                                            placeholder="Enter Nominee Email ID" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="policy_type" class="form-label text-capitalize">type of
+                                            policy <span class="text-danger">*</span></label>
+                                        <div class="mb-3">
+                                            <select class="form-select" required aria-label="select example">
+                                                <option value="" disabled selected>~~ select option ~~</option>
+                                                <option value="option_1" class="text-capitalize">option One</option>
+                                                <option value="option_2" class="text-capitalize">option Two</option>
+                                                <option value="option_3" class="text-capitalize">option Three</option>
+                                                <option value="option_4" class="text-capitalize">option four</option>
+                                                <option value="option_5" class="text-capitalize">option five</option>
+                                            </select>
+                                            <div class="invalid-feedback">Example invalid select feedback</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label for="alootment_add_info" class="form-label text-capitalize">Additional
+                                            Information <span class="text-danger">*</span></label>
+                                        <textarea name="alootment_add_info" id="alootment_add_info" class="form-control" placeholder="Enter Additional Information" required></textarea>
+
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="policy_duration" class="form-label text-capitalize">Ploicy
+                                            duration <span class="text-danger">*</span></label>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <span>From : <span class="text-danger">*</span>&nbsp; <input type="date" class="form-control"
+                                                            id="pilicy_duration_from" required></span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span>To : <span class="text-danger">*</span>&nbsp; <input type="date" class="form-control"
+                                                            id="pilicy_duration_to" required></span>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4 text-end">
+                                        <button type="button" class="btn btn-primary btn-new rounded-pill"
+                                            onclick="prevStep(4)">Previous</button>
+                                        <button type="button" class="btn btn-primary rounded-pill ms-4 me-3" onclick="nextStep(4)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Operation Stage -->
+
+                        <div class="step-form-step" id="step5">
+                            <h1 class="text-capitalize text-start form-header">Operation Stage</h1>
+                            <div class="mb-3">
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="client_email" class="form-label text-capitalize">Client Mail
+                                            formation <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="client_email"
+                                            placeholder="Enter Client Mail Id" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="material_issue" class="form-label text-capitalize">material issue <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="material_issue"
+                                            placeholder="Enter Material Issue" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="material_solution" class="form-label text-capitalize">material
+                                            solution <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="material_solution"
+                                            placeholder="Enter Material Solution" required>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <label for="policy_material" class="form-label text-capitalize">policy material <span class="text-danger">*</span></label>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="privacy_policy"
+                                                required>
+                                            <label class="form-check-label" for="privacy_policy">Privacy
+                                                Policy</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="terms_of_service"
+                                                required>
+                                            <label class="form-check-label" for="terms_of_service"> Terms of
+                                                Service</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="cookie_policy"
+                                                required>
+                                            <label class="form-check-label" for="cookie_policy">Cookie
+                                                Policy</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="refund_return"
+                                                required>
+                                            <label class="form-check-label" for="refund_return">Refund & Return
+                                                Policy</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="security_policy"
+                                                required>
+                                            <label class="form-check-label" for="security_policy">Security
+                                                Policy</label>
+                                        </div>
+
+
+                                    </div>
+
+                                    <p class="text-danger py-3">email send implementation to create a form with below
+                                        information.</p>
+
+                                    <div class="col-md-12">
+                                        <label for="chequeNo" class="form-label text-capitalize">from <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Email From" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="chequeNo" class="form-label text-capitalize">to <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Email To" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="chequeNo" class="form-label text-capitalize">subject <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="chequeNo"
+                                            placeholder="Enter Email Subject" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="chequeNo" class="form-label text-capitalize">Message <span class="text-danger">*</span></label>
+                                            <textarea name="" id="" class="form-control" placeholder="Enter Email Message" required></textarea>
+                                    </div>
+
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4 text-end">
+                                        <button type="button" class="btn btn-primary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(5)">Previous</button>
+                                        <button type="button" class="btn btn-primary rounded-pill ms-4 me-3" onclick="nextStep(5)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 6: Output -->
+                        <div class="step-form-step" id="step6">
+                            <h1 class="text-capitalize text-start form-header">Output</h1>
+                            <div class="mb-3">
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="output_document" class="form-label text-capitalize">Document
+                                             <span class="text-danger">*</span></label>
+                                        <input type="file" class="form-control" id="output_document" required>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="output_material" class="form-label text-capitalize">material <span class="text-danger">*</span></label>
+                                        <input type="file" class="form-control" id="output_material" required>
+                                    </div>
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4 text-end">
+                                        <button type="button" class="btn btn-primary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(6)">Previous</button>
+                                        <button type="button" class="btn btn-primary rounded-pill ms-4 me-3" onclick="nextStep(6)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 7: Claim Satllement -->
+                        <div class="step-form-step" id="step7">
+                            <h1 class="text-capitalize text-start form-header">Claim Satllement</h1>
+                            <div class="mb-3">
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="claim_amount" class="form-label text-capitalize"> Claim Amount <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="claim_amount" placeholder="Enter Claim Amount"
+                                            required>
+                                    </div>
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4 text-end">
+                                        <button type="button" class="btn btn-primary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(7)">Previous</button>
+                                        <button type="button" class="btn btn-primary rounded-pill ms-4 me-3" onclick="nextStep(7)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 8: Fees Satellemenet -->
+                        <div class="step-form-step" id="step8">
+                            <h1 class="text-capitalize text-start form-header">Fees Satellemenet</h1>
+                            <div class="mb-3">
+                                <div class="row g-3">
+                                    <div class="col-md-12">
+                                        <label for="fees_satellment_Description" class="form-label text-capitalize"> Description <span class="text-danger">*</span></label>
+                                       
+                                        <textarea name="fees_satellment_Description" id="fees_satellment_Description" class="form-control" placeholder="Enter Message" required></textarea>
+                                    </div>
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4 text-end">
+                                        <button type="button" class="btn btn-primary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(8)">Previous</button>
+                                        <button type="button" class="btn btn-primary rounded-pill ms-4 me-3" onclick="nextStep(8)">Save
+                                            & Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 9: File CLosed  -->
+                        <div class="step-form-step" id="step9">
+                            <h1 class="text-capitalize text-start form-header">File CLosed </h1>
+                            <div class="mb-3">
+                                <div class="row g-3">
+                                    <!-- Cheque No. Field -->
+                                    <div class="col-md-12">
+                                        <label for="chequeNo" class="form-label text-capitalize"> File Closed : <span class="badge rounded-pill bg-success">Active</span> <span class="badge rounded-pill bg-danger" hidden >Deactive</span> </label>
+                                       
+                            
+                                    </div>
+
+                                    <!-- Button to Save & Next -->
+                                    <div class="col-12 mt-4 text-end">
+                                        <button type="button" class="btn btn-primary btn-new mr-3 rounded-pill"
+                                            onclick="prevStep(9)">Previous</button>
                                         <button type="button" class="btn btn-success rounded-pill ms-4 me-3">Submit</button>
                                     </div>
                                 </div>
@@ -372,29 +719,30 @@
 
     </div>
 
-    <!-- Footer -->
-    <footer class="text-center text-white footer">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2025 Copyright:
-            <a class="text-white" href="#">abcd.com</a>
+    <!-- Footer copyright starts here-->
+    <!-- <footer class="footer  fixed-bottom">
+        
+        <div class="text-center mt-3 text-white ">
+            <p class=" ">2025 © Copyright  Gaurav Rana, All Rights Reserved</p>
         </div>
-    </footer>
+    </footer> -->
+    <!-- Footer copyright end here-->
 
+
+    <!-- script for step indicator functionality -->
     <script>
         // Disable all step indicators until the current step is completed
         function updateStepIndicators(step) {
             // Reset all indicators to default (disabled)
-
-            for (let i = 1; i <= 3; i++) {
+            for (let i = 1; i <= 9; i++) {
                 const stepIndicator = document.getElementById('step' + i + 'Indicator');
                 stepIndicator.classList.remove('active', 'completed', 'text-update');
-                stepIndicator.classList.add('disabled'); // Add disabled class
+                stepIndicator.classList.add('disabled');
             }
 
             // Mark the steps up to the current step as completed
             for (let i = 1; i <= step; i++) {
                 var indicator = document.getElementById('step' + i + 'Indicator');
-
                 indicator.classList.add('completed', 'text-update'); // Add completed class
                 indicator.classList.remove('disabled'); // Remove disabled class
             }
@@ -416,7 +764,7 @@
                 if (!input.value) {
                     // console.log(input.value)
                     alert('Please fill all required fields.');
-                    return; // Stop the function if a required field is not filled
+                    return;
                 }
             }
 
@@ -481,7 +829,6 @@
             // Update the indicators
             updateStepIndicators(step);
         }
-
 
     </script>
 

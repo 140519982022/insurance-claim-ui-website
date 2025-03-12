@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <!-- employee register form starts here -->
+        <!-- partner register form starts here -->
         <div class="login-page ">
             <div class="container ">
                 <div class="row  ">
@@ -25,30 +25,30 @@
                                     <div class="form-left h-100 py-5 px-5 form-bg">
                                         <form action="" class="row g-4 ">
                                                 <div class="col-12">
-                                                    <label class="pb-2" >Name<span class="text-danger">*</span></label>
+                                                    <label class="pb-2" >Name <span class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
-                                                        <input type="text" class="form-control" placeholder="Enter Username" required autofocus>
+                                                        <input type="text" name="partner_name" id="partner_name" class="form-control" placeholder="Enter Username" required autofocus>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-12">
-                                                    <label class="pb-2">Email<span class="text-danger">*</span></label>
+                                                    <label class="pb-2">Email <span class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <div class="input-group-text"><i class="bi bi-envelope-fill"></i></div>
-                                                        <input type="text" class="form-control" placeholder="Enter Email" required>
+                                                        <input type="text" name="partner_email" id="partner_email" class="form-control" placeholder="Enter Email" required>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
-                                                    <label class="pb-2">Aadhar Card No.<span class="text-danger">*</span></label>
+                                                    <label class="pb-2">Aadhar Card No. <span class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <div class="input-group-text"><i class="bi bi-credit-card-fill"></i></div>
-                                                        <input type="password" class="form-control" placeholder="Enter Aadhar Card No." required>
+                                                        <input type="password" name="partner_aadhar_no" id="partner_aadhar_no" class="form-control" placeholder="Enter Aadhar Card No." required>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-4 form-group my-4">
-                                                    <label class="form-label" for="cod">Country code</label>
-                                                    <select class="form-select form-control browser-default custom-select ">
+                                                    <label class="form-label" for="country_code">Country code <span class="text-danger">*</span></label>
+                                                    <select class="form-select form-control browser-default custom-select input-group-text">
                                                       <option data-countryCode="US" value="1" >USA (+1)</option>
                                                       <option data-countryCode="GB" value="44">UK (+44)</option>
                                             
@@ -268,8 +268,8 @@
                                                     </select>
                                                   </div>
                                                   <div class="col-sm-8 form-group my-4">
-                                                    <label class="form-label" for="tel">Mobile no.</label>
-                                                    <input type="tel" name="phone" class="form-control" id="tel" placeholder="Enter Your Contact Number." required>
+                                                    <label class="form-label" for="partner_mobile_no">Mobile no. <span class="text-danger">*</span></label>
+                                                    <input type="tel" name="partner_mobile_no" class="form-control" id="partner_mobile_no" placeholder="Enter Your Contact Number." required>
                                                   </div>
 
                                                 <div class="col-12 d-grid">
@@ -290,7 +290,7 @@
                 </div>
             </div>
         </div>
-        <!-- employee register form end here -->
+        <!-- partner register form end here -->
 
         <!-- Footer star-->
         <footer class="bg-primary text-center text-white footer ">

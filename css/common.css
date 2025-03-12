@@ -1,29 +1,17 @@
+.navbar {
+    background-color: #007bff;
+}
+
+.footer {
+    background-color: #007bff;
+}
+
 label{
     text-transform: capitalize;
     font-weight: bold;
+    color: #6c757d !important;
 }
 
 span{
     text-transform: capitalize;
-}
-
-/* body{
-   
-    background: linear-gradient(135deg, #a2dbf3, #84c1fa, #00b4d8);
-} */
-
-
-
-/* input[type=text], input[type=password], input[type=checkbox], input[type=tel],textarea, input[type=date], select {
-   
-    background-color: white !important;
-   
-} */
-
-/* .btn-new {
-    padding: 15px 25px;
-    
-} */
-.navbar {
-    background-color: #007bff;
 }
