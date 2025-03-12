@@ -7,6 +7,11 @@
     background-color: #007bff;
 }
 
+.img-position{
+    display: block;
+    text-align: end;
+}
+
 .step-indicator {
     display: flex;
     justify-content: space-between;
@@ -22,7 +27,7 @@
 }
 
 .step-item span {
-    margin-left: 15px;
+    margin: 0 5px;
 }
 
 .step-item .step-number {
@@ -92,6 +97,7 @@ textarea {
 @media (max-width: 768px) {
     .step-indicator {
         flex-wrap: wrap;
+        justify-content:left;
     }
 
     .step-item {
@@ -99,6 +105,11 @@ textarea {
         margin-bottom: 15px;
         
     }
+    
+    .img-position{
+        display: none;
+    }
+    
 }
 
 .step-form-step {

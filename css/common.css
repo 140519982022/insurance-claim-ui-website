@@ -1,16 +1,18 @@
-label {
+label{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+span{
     text-transform: capitalize;
 }
 
-body{
+/* body{
    
     background: linear-gradient(135deg, #a2dbf3, #84c1fa, #00b4d8);
-}
+} */
 
-.form-bg{
-    background-color: #dbebf3 !important;
 
-}
 
 /* input[type=text], input[type=password], input[type=checkbox], input[type=tel],textarea, input[type=date], select {
    
@@ -22,3 +24,6 @@ body{
     padding: 15px 25px;
     
 } */
+.navbar {
+    background-color: #007bff;
+}
