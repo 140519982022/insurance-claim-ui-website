@@ -1,0 +1,4 @@
+.table-wrapper {
+    max-height: 300px; /* Adjust this value as per your requirement */
+    overflow-y: auto;
+}

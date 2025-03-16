@@ -1,0 +1,17 @@
+.navbar {
+    background-color: #007bff;
+}
+
+.footer {
+    background-color: #007bff;
+}
+
+label{
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #6c757d !important;
+}
+
+span{
+    text-transform: capitalize;
+}
